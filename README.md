@@ -4,7 +4,7 @@
 []User Registration: Implement user registration logic.
 []Login/Logout: Develop secure login and logout functionality.
 []Password Reset: Implement password reset functionality.
-[]Password Encryption: Use bcrypt for password encryption.
+[]Password Encryption
 []Validation: Input validation for login credentials.
 
 **Product Management**
