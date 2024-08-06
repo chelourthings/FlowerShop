@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+</head>
+<body>
+
+<div class="container">
+  <h2>Searching results for: <span th:text="${searchname}"></span></h2>
+  <div class="row">
+    <div class="col-md-3" th:each="search : ${searchResults}">
+<!--      <div class="card mb-4">-->
+<!--        <img th:src="${search.imageLinks}" class="card-img-top">-->
+<!--        <div class="card-body">-->
+          <h5 class="card-title" th:text="${search.name}">Name</h5>
+          <p class="card-text" th:text="${search.description}">Description</p>
+          <p class="card-text" th:text="${search.price}">Price</p>
+          <img th:src="${search.image}" class="card-img-top">
+
+<!--          <a th:href="@{/search/{id}(id=${search.id})}" class="btn btn-primary btn-block">View More</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

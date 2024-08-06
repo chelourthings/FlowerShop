@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+
+        .custom-width {
+            width: 100%; /* Adjust the width as needed */
+            margin: 0 auto; /* Center the element horizontally */
+        }
+
+        /* Optional: Adjust the width of the list items within the ul */
+        .custom-width li {
+            width: auto; /* Adjust if necessary */
+        }
+
+        /* Optional: Additional styling for better appearance */
+        .custom-width a {
+            display: inline-block;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+
+</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title th:text="${product.name}">Product Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Product Details Page" />
+    <!-- Include the necessary CSS files -->
+    <style>
+    .image-container {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center;     /* Centers the image vertically (optional) */
+    text-align: center;      /* Centers the image if it is inline */
+    }
+
+    .image-container img {
+    max-width: 100%;         /* Ensures the image does not overflow the container */
+    height: auto;            /* Maintains the aspect ratio */
+    }
+</style>
+    <!--    tambah-->
+    <link rel="stylesheet" th:href="@{/css/animate.css}"/>
+    <link rel="stylesheet" th:href="@{/css/icomoon.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/flexslider.css}"/>
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/owl.theme.default.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script th:src="@{/js/modernizr-2.6.2.min.js}"></script>
+    <script th:src="@{/js/respond.min.js}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script th:src="@{/js/respond.min.js}"></script>-->
+<!--    <![endif]&ndash;&gt;-->
+</head>
+<body>
+<div class="fh5co-loader"></div>
+<div id="page">
+    <!-- Navigation -->
+    <nav class="fh5co-nav" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-2">
+                    <div id="fh5co-logo"><a th:href="@{/}">Flower Shop</a></div>
+                </div>
+                <div class="col-md-6 col-xs-6 text-center menu-1">
+                    <ul>
+                        <li class="has-dropdown">
+                            <a th:href="@{/products}">Products</a>
+                        </li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+                    <ul>
+                        <li class="search">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search..">
+                                <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+                                    </span>
+                            </div>
+                        </li>
+                        <li class="shopping-cart"><a th:href="@{/cart/view}" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-color: #ffd1dc;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1 class="banner_taital">Flower Shop</h1>
+                            <h2>Bringing Joy and Beauty to Every Moment</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Details -->
+    <div id="fh5co-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 animate-box">
+                    <div class="owl-carousel owl-carousel-fullwidth product-carousel">
+                        <div class="item">
+<!--                            <figure class="image-container">-->
+<!--                                <img th:src="${product.image}" alt="Product Image">-->
+<!--                            </figure>-->
+                        </div>
+                    </div>
+                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+<!--                            <h1 th:text="${product.name}"></h1>-->
+<!--                            <span class="price" th:text="'RM ' + ${product.price}"></span>-->
+<!--                            <p th:text="${product.description}"></p>-->
+                            <figure class="image-container">
+                                <img th:src="${product.image}" alt="Product Image">
+                            </figure>
+<!--                            <a th:href="@{/cart/add/{id}(id=${product.id})}" method="post" style="display: inline;"-->
+<!--                               type="submit" th:class="icon"><i th:class="icon-shopping-cart"></i></a>-->
+                            <a  th:href="@{/cart/add/{id}(id=${product.id})}" method="post" class="btn btn-primary btn-outline btn-lg" type="submit">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="fh5co-tabs animate-box">
+
+                        <!-- Tabs Content -->
+                        <div class="fh5co-tab-content-wrap">
+                            <div class="fh5co-tab-content tab-content active" data-tab-content="1">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <h3> Product Details </h3>
+                                    <span class="price" th:text="'RM ' + ${product.price}"></span>
+                                    <h2 th:text="${product.name}"></h2>
+                                    <p th:text="${product.description}"></p>
+                                    <p>Regular - 10 stalks | Approx. 32cm (W) x 40cm (H)</p>
+                                    <p>Medium - 20 stalks</p>
+                                    <p>Large - 30 stalks</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="fh5co-footer" role="contentinfo">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-4 fh5co-widget">
+                    <h3>Flower Shop</h3>
+                    <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                    <ul class="fh5co-footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Meetups</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                    <ul class="fh5co-footer-links">
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Handbook</a></li>
+                        <li><a href="#">Help Desk</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+                    <ul class="fh5co-footer-links">
+                        <li><a href="#">Find Designers</a></li>
+                        <li><a href="#">Find Developers</a></li>
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row copyright">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <small class="block">&copy; 2024 Your Company. All Rights Reserved.</small>
+                        <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://blog.gessato.com/" target="_blank">Gessato</a> &amp; <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+                    </p>
+                    <p>
+                    <ul class="fh5co-social-icons">
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                        <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Back to top button -->
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
+
+<!-- Include the necessary JS files -->
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/jquery.easing.1.3.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.waypoints.min.js}"></script>
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<script th:src="@{/js/jquery.countTo.js}"></script>
+<script th:src="@{/js/jquery.flexslider-min.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

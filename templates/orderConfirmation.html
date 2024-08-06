@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/order-confirmation.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+    /* Reset some basic elements */
+    body, h1, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    }
+
+    /* Body styling */
+    body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    }
+
+    /* Container styling */
+    .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header styling */
+    h1 {
+    font-size: 2.5em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    }
+
+    /* Paragraph styling */
+    p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    }
+
+    /* Link styling */
+    a {
+    display: inline-block;
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+    }
+
+    a:hover {
+    color: #388E3C;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Order Confirmation</h1>
+    <p>Your order has been placed!</p>
+    <a href="/products">Back to Products</a>
+</div>
+</body>
+</html>
+

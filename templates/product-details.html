@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product Details</title>
+</head>
+<body>
+<h1 th:text="${product.name}"></h1>
+<p th:text="${product.description}"></p>
+<p th:text="'Price: $' + ${product.price}"></p>
+<p th:text="'Stock: ' + ${product.stockQuantity}"></p>
+<form th:action="@{/cart/add/{id}(id=${product.id})}" method="post">
+    <button type="submit">Add to Cart</button>
+</form>
+<a href="/products">Back to Products</a>
+<!--<a th:href="@{/products/view/{id}(id=${product.id})}">Back to Products</a>-->
+
+
+</body>
+</html>
